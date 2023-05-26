@@ -1,0 +1,81 @@
+body {
+  background-color: lightblue;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: transparent;
+}
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  border: none;
+}
+th {
+  background-color: #ddd;
+}
+.btn-circle {
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #f44336;
+  color: white;
+  font-size: 16px;
+  padding: 10px 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+}
+.btn-circle:hover {
+  background-color: #c62828;
+}
+.total {
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid black;
+  background-color: transparent;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.finalize-purchase {
+  display: block;
+  margin-top: 20px;
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  padding: 10px 16px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+}
+.quantity {
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  font-weight: bold;
+}
+
+.home-page-button {
+  margin-top: 10px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.home-page-button:hover {
+  background-color: #51a353;
+}
+
+.home-page-link {
+  all: unset;
+  display: inline-block;
+  padding: 5px 10px;
+}
