@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/product.css') }}"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ url_for('static', filename='/images/favicon.ico') }}"
+    />
+
+    <title>Add Product</title>
+  </head>
+  <body>
+    <h1>Add Product</h1>
+
+    <button class="shopping-cart-button">
+      <a class="shopping-cart-link" href="{{ url_for('cart') }}"
+        >Go To Shopping Cart</a
+      >
+    </button>
+
+    <form
+      method="POST"
+      action="{{ url_for('add_product') }}"
+      enctype="multipart/form-data"
+    >
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" />
+      <label for="image_path">Image Path:</label>
+      <input type="url" name="image_path" id="image_path" />
+      <label for="price">Price: (Dollar$)</label>
+      <input type="number" name="price" id="price" />
+      <input type="submit" value="Add Product" />
+    </form>
+
+    <div class="products">
+      {% for product in products%}
+      <div class="product-box">
+        <button class="delete-button" onclick="deleteProduct({{product.id}})">
+          X
+        </button>
+
+        <img src="{{product.image_path}}" alt="{{product.image_path}}" />
+        <h2>Name: {{product.name}}</h2>
+        <p>Price: {{product.price}}$</p>
+        <label for="quantity{{product.id}}">quantity:</label>
+        <input
+          type="number"
+          name="quantity"
+          id="quantity{{product.id}}"
+          class="item-quantity{{product.id}}"
+        />
+        <button class="add-to-cart" onclick="addItemToCart({{product.id}})">
+          Add to Cart
+        </button>
+      </div>
+      {%endfor%}
+    </div>
+  </body>
+
+  <script src="{{ url_for('static', filename='javascript/product.js') }}"></script>
+</html>
