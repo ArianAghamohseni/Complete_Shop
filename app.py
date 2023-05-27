@@ -85,9 +85,10 @@ def cart():
     cart_items = CartItem.query.all()
     items = []
     for cart_item in cart_items:
-        item = Product.query.filter_by(id=cart_item.product_id).first()
-        item.quantity = cart_item.quantity
-        items.append(item)
+        product = Product.query.filter_by(id=cart_item.product_id).first()
+        cart_item.name = product.name
+        cart_item.price = product.price
+        items.append(cart_item)
 
     return render_template('cart.html', cart_items=items)
 
